@@ -1,0 +1,54 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.google.dagger.hilt.android'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdk Config.COMPILE_SDK
+
+    defaultConfig {
+        applicationId PackageNames.APP_PACKAGE_NAME
+        minSdk Config.MIN_SDK
+        targetSdk Config.TARGET_SDK
+        versionCode Config.APP_CODE_VERSION
+        versionName Config.VERSION_CODE_NAME
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility Config.JAVA_VERSION
+        targetCompatibility Config.JAVA_VERSION
+    }
+    kotlinOptions {
+        jvmTarget = Config.JVM_TARGET
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation Dependencies.ANDROID_CORE
+    implementation Dependencies.MATERIAL_DEP
+    implementation Dependencies.CONSTRAINT_LAY_DEP
+    implementation Dependencies.NAVIGATION_FRAGMENT_DEP
+    implementation Dependencies.NAVIGATION_UI_DEP
+    implementation Dependencies.VIEW_MODEL_SCOPE_DEP
+    implementation Dependencies.LIFECYCLE_RUNTIME_DEP
+    implementation Dependencies.COROUTINES_DEP
+    implementation Dependencies.DAGGER_HILT_DEP
+    kapt Dependencies.DAGGER_HILT_COMPILER_DEP
+    testImplementation Dependencies.JUNIT_DEP
+    androidTestImplementation Dependencies.JUNIT_EXT_DEP
+    androidTestImplementation Dependencies.ESPRESSO_DEP
+}
