@@ -2,6 +2,7 @@ plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
+    id(Plugins.FIREBASE_PLUGIN)
 }
 
 android {
@@ -39,12 +40,18 @@ android {
 }
 
 dependencies {
+    implementation(project(Module.LIB_MODULE))
     implementation(Dependencies.ANDROID_CORE)
-    implementation(Dependencies.RETROFIT_DEP)
-    implementation(Dependencies.RETROFIT_GSON_DEP)
     implementation(Dependencies.COROUTINES_DEP)
+
     implementation(Dependencies.DAGGER_HILT_DEP)
     kapt(Dependencies.DAGGER_HILT_COMPILER_DEP)
+
+    implementation(Dependencies.FIREBASE_BOM_DEP)
+    implementation(Dependencies.FIREBASE_ANALYTICS_DEP)
+    implementation(Dependencies.FIREBASE_FS_DEP)
+    implementation(Dependencies.FIREBASE_COROUTINES_DEP)
+
     testImplementation(Dependencies.JUNIT_DEP)
     androidTestImplementation(Dependencies.JUNIT_EXT_DEP)
     androidTestImplementation(Dependencies.ESPRESSO_DEP)
