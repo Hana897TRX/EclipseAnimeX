@@ -2,6 +2,7 @@
 buildscript {
     dependencies {
         classpath(ClassPath.DAGGER_HILT_CP)
+        classpath(ClassPath.FIREBASE_CP)
     }
 }
 

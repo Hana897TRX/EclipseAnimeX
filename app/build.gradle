@@ -41,13 +41,17 @@ dependencies {
     implementation Dependencies.ANDROID_CORE
     implementation Dependencies.MATERIAL_DEP
     implementation Dependencies.CONSTRAINT_LAY_DEP
+
     implementation Dependencies.NAVIGATION_FRAGMENT_DEP
     implementation Dependencies.NAVIGATION_UI_DEP
+
     implementation Dependencies.VIEW_MODEL_SCOPE_DEP
     implementation Dependencies.LIFECYCLE_RUNTIME_DEP
+
     implementation Dependencies.COROUTINES_DEP
     implementation Dependencies.DAGGER_HILT_DEP
     kapt Dependencies.DAGGER_HILT_COMPILER_DEP
+
     testImplementation Dependencies.JUNIT_DEP
     androidTestImplementation Dependencies.JUNIT_EXT_DEP
     androidTestImplementation Dependencies.ESPRESSO_DEP
