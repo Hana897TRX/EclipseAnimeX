@@ -1,19 +1,20 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id(Plugins.KAPT_PLUGIN)
 }
 
 android {
     namespace = "com.hana897trx.repository"
-    compileSdk = 32
+    compileSdk = Config.COMPILE_SDK
 
     packagingOptions {
         resources.excludes.add("META-INF/*")
     }
 
     defaultConfig {
-        minSdk = 26
-        targetSdk = 32
+        minSdk = Config.MIN_SDK
+        targetSdk = Config.TARGET_SDK
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -29,20 +30,24 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = Config.JAVA_VERSION
+        targetCompatibility = Config.JAVA_VERSION
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = Config.JVM_TARGET
     }
 }
 
 dependencies {
+    implementation(project(Module.DATA_MODULE))
+    implementation(project(Module.LIB_MODULE))
 
-    implementation("androidx.core:core-ktx:1.7.0")
-    implementation("androidx.appcompat:appcompat:1.5.1")
-    implementation("com.google.android.material:material:1.7.0")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.3")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
+    testImplementation(Dependencies.JUNIT_DEP)
+    androidTestImplementation(Dependencies.JUNIT_EXT_DEP)
+    androidTestImplementation(Dependencies.ESPRESSO_DEP)
+
+    implementation(Dependencies.COROUTINES_DEP)
+
+    implementation(Dependencies.DAGGER_HILT_DEP)
+    kapt(Dependencies.DAGGER_HILT_COMPILER_DEP)
 }

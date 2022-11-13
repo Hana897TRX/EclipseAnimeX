@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "643660033321",
+    "project_id": "eclipseanimex-38916",
+    "storage_bucket": "eclipseanimex-38916.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:643660033321:android:29d58fca1841020cc75b38",
+        "android_client_info": {
+          "package_name": "com.hana897trx.data"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "643660033321-ot4bdbmem4pshaa21tmmtn8pdkksocu8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmQREBy-yztsZeH3v_MCsdnGHWCyB0L7g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "643660033321-ot4bdbmem4pshaa21tmmtn8pdkksocu8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
